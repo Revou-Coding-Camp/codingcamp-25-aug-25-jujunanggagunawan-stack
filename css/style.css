@@ -8,6 +8,7 @@
   --radius:10px;
   --ring:#9db7ff;
   --ff:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --nav-h: 72px;
 }
 * {
     box-sizing: border-box;
@@ -15,6 +16,7 @@
 html,body {
 height: 100%;
 background: var(--bg);
+scroll-behavior: smooth;
 }
 body {
     margin: 0;
@@ -28,13 +30,22 @@ body {
     max-width:none;
     margin: 0;
     padding: 10px 5%;
+    position: sticky;
 }
    
 .header {
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    background: rgba(255,255,255,.8); 
+    backdrop-filter: blur(8px);
+    height: var(--nav-h);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 14px;
+    margin: auto;
 }
 .brand {
     display: flex;
@@ -42,7 +53,7 @@ body {
     gap: 8px;
 }
 .brand img {
-    width: 80px;
+    width: 50px;
     height: auto;
 }
 .nav {
@@ -65,22 +76,143 @@ nav a:hover {
 /* hero */
 .hero {
      position: relative; padding: 56px 0 64px; 
-     background: url(https://res.cloudinary.com/duukr495v/image/upload/v1756303077/IMG_0005_1_erotns.jpg)center/cover no-repeat;
-     height: 400px;
+     background: url(https://res.cloudinary.com/duukr495v/image/upload/v1756388774/macam_macam_furniture_pl6iqz.jpg)center/cover no-repeat;
+     height: 600px;
+     z-index: 0;
 }
 .hero-inner {
-     display:grid; 
-     grid-template-columns: 1.2fr 1fr; 
-     gap: 28px; 
-     align-items: center; 
+    display:grid; 
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 28px; 
+    align-items: center; 
 }
-.hero-copy {
-    font: var(--ff);
+.hero-copy h1 { 
+    font-size: clamp(28px, 5vw, 48px); 
+    margin: 0 0 6px; 
 }
-.button {
-    border-radius: 1px;
+.hero-copy p { 
+    color: var(--muted); 
+    margin-top: 0; 
 }
-input,textarea{
-    border: 1px solid;
-    border-radius: 1px;    
+.greet-form { 
+    height: 30px;
+    display:flex; 
+    gap:10px; 
+    margin-top: 14px; 
+}
+input, textarea { 
+    padding: 12px 14px; 
+    background: var(--bg); 
+    color: var(--text); 
+    border: 1px solid var(--ring); 
+    border-radius: 10px; 
+    outline: none; 
+}
+input:focus, textarea:focus {
+    border-color: var(--brand); 
+    box-shadow: 0 0 0 3px rgba(79,124,255,.2); }
+.button { 
+    padding: 12px 16px; 
+    border: 0; 
+    border-radius: 10px; 
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)); 
+    color: #0b0d12; font-weight: 700; 
+    cursor: pointer; }
+.button:hover { 
+    filter: brightness(1.05); 
+}
+.hero-art { 
+    height: 260px; 
+    border-radius: var(--radius); 
+    background: linear-gradient(135deg, rgba(79,124,255,.35), rgba(110,231,183,.35)); 
+    box-shadow: 0 10px 40px rgba(0,0,0,.35); 
+}
+.about {
+    padding: 80px ;
+    background: var(--bg);
+}
+.about-container {
+    margin: auto;
+    display: flex;
+    grid-template-columns: 1fr,1r;
+    gap: 20px;
+    align-items: center;
+}
+.msgus {
+    padding: 48px ;
+    margin-top: 1px solid rgba(0,0,0,12);
+}
+.msgus h2 {
+    margin: 0 0 16px;
+}
+.msgus-grid {
+    display: grid;
+    grid-area: 24px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+   
+
+
+
+
+
+
+
+
+
+ /* responsif  */
+ @media (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+  .hero-inner {
+    padding-left: 20px;
+    text-align: center;
+    align-items: center;
+  }
+   .msgus-grid{ grid-template-columns: 1fr; }
+}
+
+.msgus-form .row{ display: grid; gap: 8px; margin-bottom: 12px; }
+.msgus-form label, .msgus-form .row > span{ font-weight: 600; font-size: 14px; }
+
+.msgus-form input[type="text"],
+.msgus-form input[type="date"],
+.msgus-form textarea{
+  width: 100%; padding: 10px 12px; font: inherit;
+  border: 1px solid rgba(0,0,0,.22); border-radius: 8px; background: #fff;
+}
+.msgus-form textarea{
+     resize: vertical; 
+    min-height: 120px; 
+}
+.radio-wrap{ 
+    display: flex; 
+    gap: 18px; 
+    align-items: center; 
+}
+
+.msgus-preview{
+  border: 1px solid rgba(0,0,0,.22);
+  border-radius: 8px; 
+  padding: 16px; 
+  margin: 16px;
+  background: #fff;
+  min-height: 220px;
+}
+
+.btn{ 
+  appearance:none; 
+  padding:10px 16px; 
+  border-radius:10px; 
+  cursor:pointer;
+  border:1px solid rgba(0,0,0,.14); background:#fff;
+}
+.btn.primary{ background:#111; color:#fff; 
+    border-color:#111; 
+}
+.btn:active{ 
+    transform: translateY(1px); 
 }

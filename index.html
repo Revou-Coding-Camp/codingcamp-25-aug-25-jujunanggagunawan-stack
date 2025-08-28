@@ -9,15 +9,16 @@
 <body>
     <!-- header / navbar -->
      <header class="container header">
-        <a href="home" class="brand">
+        <a href="#home" class="brand">
            <img src="https://res.cloudinary.com/duukr495v/image/upload/v1756302970/logo-removebg-preview_jjpqej.png" alt="home">
         </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+        <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">☰</label>
+
         <nav class="nav">
-            <a href="home">home</a>
-            <a href="profile">Profile</a>
-            <a href="about">About</a>
-            <a href="vision">Vision & Mission</a>
-            <a href="contact">Massage Us</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#massage-us">Massage Us</a>
         </nav>
      </header>
 
@@ -25,7 +26,7 @@
       <section class="hero" id="home">
         <div class="container hero-iner">
             <div class="hero-copy">
-                <h1>Hi,<span id="greet-name">Guest,Welcome To Alaca Furniture</span></h1>
+                <h1>Hi,<span id="greet-name">Guest</span> Welcome To Alaca Furniture</h1>
                 <p>Welcome,please insert your name so we can greet properly</p>
                 <form id="greet-form" class="greet-form" aria-label="greeting form">
                     <input type="text" id="input-name" name="name" placeholder="Type Your Name" required>
@@ -36,5 +37,72 @@
             </div>
         </div>
       </section>
+      <!-- about -->
+       <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h3>About Us</h3>
+                <p> Alaca Furniture adalah brand yang berfokus pada furnitur minimalis modern.
+                    Kami menghadirkan produk dengan kualitas terbaik, desain elegan, 
+                    dan harga terjangkau. Visi kami adalah membuat rumah Anda lebih nyaman 
+                    dengan sentuhan furnitur kayu minimalis yang estetik.
+                </p>
+                <p>
+                    Dengan pengalaman bertahun-tahun, kami selalu berkomitmen memberikan 
+                    kepuasan pelanggan melalui desain yang timeless dan bahan yang berkualitas.
+                </p>
+            </div>
+        </div>
+       </section>
+       <!-- massage us -->
+        <section id="massage-us" class="container msgus">
+            <h2>Massage Us</h2>
+            <div class="msgus-grid">
+                <form id="msgform" class="msgus-form" autocomplete="on">
+                    <div class="row">
+                        <label for="mu-name">Nama</label>
+                        <input type="text" id="mu-name" name="name" placeholder="Nama" required>
+                    </div>
+
+                    <div class="row">
+                        <label for="mu-date">Tanggal Lahir</label>
+                        <input type="date" id="mu-date" name="dob" required>
+                    </div>
+
+                    <div class="row">
+                        <span>Jenis Kelmin</span>
+                        <div class="radio-wrap">
+                            <label><input type="radio" name="gender" value="Laki-laki" required/>Laki-laki</label>
+                            <label><input type="radio" name="gender" value="Perempuan" required/>Perempuan</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="mu-msg">Pesan</label>
+                        <textarea id="mu-msg" name="message" rows="5" placeholder="Tulis pesan kamu..." required></textarea>
+                    </div>
+
+                     <div class="row">
+                         <button type="submit" class="btn primary" id="mu-submit">Submit</button>
+                     </div>
+                </form>
+                  <aside class="msgus-preview" aria-live="polite">
+                    <p><strong>Current time:</strong> <span id="mu-now">—</span></p>
+                    <p><strong>Nama:</strong> <span id="p-name">—</span></p>
+                    <p><strong>Tanggal Lahir:</strong> <span id="p-date">—</span></p>
+                    <p><strong>Jenis Kelamin:</strong> <span id="p-gender">—</span></p>
+                    <p><strong>Pesan:</strong> <span id="p-msg">—</span></p>
+                  </aside>
+             </div>
+
+        </section>
+
+        <!-- footer -->
+         <div class="footer">
+            <footer>
+                <p>Created By:jujun aan gunawan</p>
+           </footer>
+         </div>
 </body>
+<script src="js/script.js"></script>
 </html>
