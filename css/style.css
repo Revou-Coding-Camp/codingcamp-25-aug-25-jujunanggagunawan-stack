@@ -1,0 +1,86 @@
+:root{
+  --bg:#f4f6f8;
+  --panel:#ffffff;
+  --ink:#222;
+  --muted:#666;
+  --line:#cfd6df;
+  --btn:#ededf3;
+  --radius:10px;
+  --ring:#9db7ff;
+  --ff:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+html,body {
+height: 100%;
+background: var(--bg);
+}
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font:var(--ff)
+}
+/* navbar */
+.container {
+    width: 100%;
+    max-width:none;
+    margin: 0;
+    padding: 10px 5%;
+}
+   
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.brand img {
+    width: 80px;
+    height: auto;
+}
+.nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #333;
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--line);
+}
+nav a:hover {
+    background: #ffffff;
+}
+/* hero */
+.hero {
+     position: relative; padding: 56px 0 64px; 
+     background: url(https://res.cloudinary.com/duukr495v/image/upload/v1756303077/IMG_0005_1_erotns.jpg)center/cover no-repeat;
+     height: 400px;
+}
+.hero-inner {
+     display:grid; 
+     grid-template-columns: 1.2fr 1fr; 
+     gap: 28px; 
+     align-items: center; 
+}
+.hero-copy {
+    font: var(--ff);
+}
+.button {
+    border-radius: 1px;
+}
+input,textarea{
+    border: 1px solid;
+    border-radius: 1px;    
+}
